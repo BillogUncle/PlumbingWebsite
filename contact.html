@@ -1,26 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Header Section -->
-    <header>
-        <h1>Pedro The Plumbing Man</h1>
-        <h4>Gimme a call, Sugar :P</h4>
-        <nav>
-            <a href="\index.html">Home</a>
-            <a href="\services.html">Services</a>
-            <a href="\about.html">About Us</a>
-            <a href="\contact.html">Contact</a>
-        </nav>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Plumbing Website Test</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h2>Reliable Plumbing Services You Can Trust</h2>
-        <p>We offer top-quality plumbing solutions for homes and businesses.</p>
-    </section>
+
+    <!-- Sidebar Structure -->
+    <div id="sidebar" class="sidebar">
+        <button class="close-btn" onclick="closeMenu()">×</button>
+        <h2>Menu</h2>
+
+        <!--Change these pages to the types of services Pete does-->
+        <a href="\index.html">Service 1</a>
+        <a href="\services.html">Service 2</a>
+        <a href="\about.html">Service 3</a>
+        <a href="\contact.html">Service 4</a>
+    </div>
+
+
+    <!-- Main Content -->
+    <div id="main-content">
+        <header>
+            <button class="menu-btn" onclick="openMenu()">☰ Open Menu</button>
+            <h1>Company Name</h1>
+            <h4>Subtext, if applicable</h4>
+        </header>
+
+        <section id="page-name">
+            <h3>contact page (service 4)</h3>
+        </section>
+        
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2>Family Run and Reliable Plumbing Services You Can Trust</h2>
+            <p>We offer top-quality plumbing solutions for homes and businesses.</p>
+
+            <!--Change these buttons to images which relay the types of contact Pete has
+                For example, WhatsApp, Facebook, Email etc...
+             --> 
+            <button type="button" onclick="location.href='\contact.html';">
+                Contact for a free Quote
+            </button>
+        </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

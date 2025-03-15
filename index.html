@@ -2,56 +2,95 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plumbing Website Test</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Header Section -->
-    <header>
-        <h1>Pheonix is here</h1>
-        <h4>He'll clean your pipes ;)</h4>
-        <nav>
-            <a href="\index.html">Home</a>
-            <a href="\services.html">Services</a>
-            <a href="\about.html">About Us</a>
-            <a href="\contact.html">Contact</a>
-        </nav>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Plumbing Website Test</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h2>Reliable Plumbing Services You Can Trust</h2>
-        <p>We offer top-quality plumbing solutions for homes and businesses.</p>
-        <button type="button" onclick="location.href='\contact.html';">
-            Contact for a free Quote
-        </button>
-    </section>
 
-    <!-- Services Section -->
-    <section class="services">
-        <h2>Our Services</h2>
-        <div>
-            <h3>Residential Plumbing</h3>
-            <p>From leaks to installations, we’ve got you covered.</p>
-        </div>
-        <div>
-            <h3>Commercial Plumbing</h3>
-            <p>Efficient and reliable plumbing services for your business.</p>
-        </div>
-        <div>
-            <h3>Emergency Repairs</h3>
-            <p>Available 24/7 for your urgent plumbing needs.</p>
-        </div>
-    </section>
+    <!-- Sidebar Structure -->
+    <div id="sidebar" class="sidebar">
+        <button class="close-btn" onclick="closeMenu()">×</button>
+        <h2>Menu</h2>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Your Plumbing Business. All rights reserved.</p>
-    </footer>
+        <!--Change these pages to the types of services Pete does-->
+        <a href="\index.html">Service 1</a>
+        <a href="\services.html">Service 2</a>
+        <a href="\about.html">Service 3</a>
+        <a href="\contact.html">Service 4</a>
+    </div>
+
+    <!-- Overlay if menu is open -->
+    <div id="overlay" class="overlay" onclick="closeMenu()"></div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="main-content">
+        <header>
+            <button class="menu-btn" onclick="openMenu()">☰ Open Menu</button>
+            <h1>Company Name</h1>
+            <h4>Subtext, if applicable</h4>
+        </header>
+        
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2>Family Run and Reliable Plumbing Services You Can Trust</h2>
+            <p>We offer top-quality plumbing solutions for homes and businesses.</p>
+
+            <!--Change these buttons to images which relay the types of contact Pete has
+                For example, WhatsApp, Facebook, Email etc...
+             --> 
+            <button type="button" onclick="location.href='\contact.html';">
+                Contact for a free Quote
+            </button>
+        </section>
+
+        <!--Scrolling Gallery-->
+        <section class="gallery">
+            <div class="gallery-wrapper">
+                <a href="\services.html"><img src="images/plumbing1.jpg" alt="Service 2 description"></a>
+                <a href="\contact.html"><img src="images/plumbing2.jpg" alt="Service 4 description"></a>
+                <a href="\about.html"><img src="images/plumbing3.jpg" alt="Service 3 description"></a>
+                <a href="\services.html"><img src="images/plumbing4.jpg" alt="Service 2 description"></a>
+                <a href="\about.html"><img src="images/plumbing5.jpg" alt="Service 3 description"></a>
+                
+        </section>
+
+
+        <!--
+            Services Section:
+            Rework this to an image gallery overlay
+        -->
+        <section class="services">
+            <h2>Our Services</h2>
+            <div>
+                <h3>Residential Plumbing</h3>
+                <p>From leaks to installations, we’ve got you covered.</p>
+            </div>
+            <div>
+                <h3>Commercial Plumbing</h3>
+                <p>Efficient and reliable plumbing services for your business.</p>
+            </div>
+            <div>
+                <h3>Emergency Repairs</h3>
+                <p>Available 24/7 for your urgent plumbing needs.</p>
+            </div>
+        </section>
+    </div>
 
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+    
+
+    
+
+
