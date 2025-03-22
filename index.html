@@ -5,82 +5,174 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Plumbing Website Test</title>
+        <title>Prestige Bathing</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
     <body>
 
 
     <!-- Sidebar Structure -->
-    <div id="sidebar" class="sidebar">
-        <button class="close-btn" onclick="closeMenu()">×</button>
-        <h2>Menu</h2>
+        <div id="sidebar" class="sidebar">
+            <button class="close-btn" onclick="closeMenu()">×</button>
 
-        <!--Change these pages to the types of services Pete does-->
-        <a href="\index.html">Service 1</a>
-        <a href="\services.html">Service 2</a>
-        <a href="\about.html">Service 3</a>
-        <a href="\contact.html">Service 4</a>
-    </div>
+            <!--Change these pages to the types of services Pete does-->
+            <ul class="sideMenu">
+                <a class="sidebarTop" href="/index.html">Home</a>
+                <a class="listParentCategory" href="/bathrooms.html">Services</a>
+                    <li>
+                        <a class="listChildCategory" href="/bathrooms.html">Bathrooms</a>
+                    </li>
+                    <li>
+                        <a class="listChildCategory" href="/bathrooms.html">Easy-Access Bathrooms</a>
+                    </li>
+                    <li>
+                        <a class="listChildCategory" href="/bathrooms.html">Wetrooms</a>
+                    </li>
+                    <li>
+                        <a class="listChildCategory" href="/bathrooms.html">Emergency Repairs</a>
+                    </li>
+            </ul>
 
-    <!-- Overlay if menu is open -->
-    <div id="overlay" class="overlay" onclick="closeMenu()"></div>
+            <div id="sidebarContact" class="sidebarConatct">
+                <a href="/contact.html">Contact Us</a>
+                <a class="sidebarConatct" href="https://www.facebook.com">
+                    <img src ="">Facebook <!--Image for Facebook, link to Facebook page-->
+                </a> 
+                <a class="sidebarConatct" href="https://www.google.com">
+                    <img src="">Phone (Google atm) <!--Image for Mobile, link to Free Consultation page-->
+                </a> 
+                <a class="sidebarConatct" href="https://www.github.com">
+                    <img src="">WhatsApp (Github atm) <!--Image for WhatsApp, link to Free Consultation page-->
+                </a> 
+            </div>
+        </div>
+
+        <!-- Overlay if menu is open -->
+         <div id="overlay" class="overlay" onclick="closeMenu()"></div>
 
     <!-- Main Content -->
-    <div id="main-content" class="main-content">
+        <div id="main-content" class="main-content">
+
+        <!-- Banner at top of page-->
         <header>
-            <button class="menu-btn" onclick="openMenu()">☰ Open Menu</button>
-            <h1>Company Name</h1>
-            <h4>Subtext, if applicable</h4>
+            <button class="menu-btn" onclick="openMenu()">☰</button>
+            <h1>Prestige Bathing</h1>
         </header>
         
-
         <!-- Hero Section -->
-        <section class="hero">
-            <h2>Family Run and Reliable Plumbing Services You Can Trust</h2>
-            <p>We offer top-quality plumbing solutions for homes and businesses.</p>
-
-            <!--Change these buttons to images which relay the types of contact Pete has
-                For example, WhatsApp, Facebook, Email etc...
-             --> 
-            <button type="button" onclick="location.href='\contact.html';">
-                Contact for a free Quote
-            </button>
-        </section>
+            <section class="hero">
+                <h2>Family Run and Reliable Plumbing Services You Can Trust</h2>
+                <p>We offer top-quality plumbing solutions for homes and businesses.</p>
+                <button type="button" onclick="location.href='/contact.html';">
+                    Contact for a free Quote
+                </button>
+            </section>
 
         <!--Scrolling Gallery-->
-        <section class="gallery">
-            <div class="gallery-wrapper">
-                <a href="\services.html"><img src="images/plumbing1.jpg" alt="Service 2 description"></a>
-                <a href="\contact.html"><img src="images/plumbing2.jpg" alt="Service 4 description"></a>
-                <a href="\about.html"><img src="images/plumbing3.jpg" alt="Service 3 description"></a>
-                <a href="\services.html"><img src="images/plumbing4.jpg" alt="Service 2 description"></a>
-                <a href="\about.html"><img src="images/plumbing5.jpg" alt="Service 3 description"></a>
-                
-        </section>
+            <section class="gallery">
+                <div class="gallery-wrapper">
+                    <a href="/services.html"><img src="images/plumbing1.jpg" alt="Service 2 description"></a>
+                    <a href="/contact.html"><img src="images/plumbing2.jpg" alt="Service 4 description"></a>
+                    <a href="/about.html"><img src="images/plumbing3.jpg" alt="Service 3 description"></a>
+                    <a href="/services.html"><img src="images/plumbing4.jpg" alt="Service 2 description"></a>
+                    <a href="/about.html"><img src="images/plumbing5.jpg" alt="Service 3 description"></a>
+                </div>
+            </section>
 
 
-        <!--
-            Services Section:
-            Rework this to an image gallery overlay
-        -->
-        <section class="services">
-            <h2>Our Services</h2>
-            <div>
-                <h3>Residential Plumbing</h3>
-                <p>From leaks to installations, we’ve got you covered.</p>
-            </div>
-            <div>
-                <h3>Commercial Plumbing</h3>
-                <p>Efficient and reliable plumbing services for your business.</p>
-            </div>
-            <div>
-                <h3>Emergency Repairs</h3>
-                <p>Available 24/7 for your urgent plumbing needs.</p>
-            </div>
-        </section>
-    </div>
+        <!-- Services Section: Rework this to an image gallery overlay -->
+            <section class="services">
+                <h2>Our Services</h2>
+                <div>
+                    <h3>Bathrooms</h3>
+                    <p>From leaks to renovations, we do it all</p>
+                </div>
+                <div>
+                    <h3>Easy-Access Bathrooms</h3>
+                    <p>We install accessibility compliant facilities</p>
+                </div>
+                <div>
+                    <h3>Wetrooms</h3>
+                    <p>Bethroom not good enough, we also install, fix, and, maintain wetrooms</p>
+                </div>
+                <div>
+                    <h3>Emergency Repairs</h3>
+                    <p>Available anytime for maintenance and repairs, wether it's an emergency or not</p>
+                </div>
+            </section>
+        </div>
 
+    <!-- Footer Section -->
+        <footer class="footerBanner">
+
+        <!-- Footer top row -->
+            <div class="footerOne">
+                <div class="footerContent">
+                    <p>Prestige Bathing LTD is an independent contractor, highly established and highly experienced plumbing business located in North-East England.</p>
+                </div>
+            </div>
+
+        <!-- Footer lower rows -->
+            <div class="footerLower">
+                <div class="footerTwo">
+                     <div class="footerContent">
+                        <p><strong>Phone</strong><br/>
+                            <a href="tel:01234567890">01234567890</a>
+                        </p>
+                        <p><strong>Email</strong><br/>
+                            <a href="mailto:adamsp8os.arf@gmail.com">adamsp8os.arf@gmail.com</a>
+                        </p>
+                        <p><strong>Address</strong><br/>
+                            <a href="https://www.google.com/maps/place/43+Pentland+Ave,+Stockton-on-Tees,+Billingham+TS23+2PN,+UK" target="_blank">
+                                41 Pentland Avenue, Billingham, TS23 2PN
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="footerThree">
+                    <div class="footerContent FooterContentList">
+                        <ul><strong>Website Directory</strong>
+                            <li><a href="/index.html">Home Page</a></li>
+                            <li><a href="/about.html">About Us</a></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li><a href="/bathrooms.html">Bathroom Types</a></li>
+                            <li><a href="/repairs.html">Repair Services</a></li>
+                            <li><a href="/services.html">All Services</a></li>       
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+            <div class="footerFooterContent">
+                <div class="footerFooterIcons">
+                    <a href="https://wa.me/441234567890" target="_blank" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="tel:01234567890" aria-label="Phone">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                    <a href="mailto:adamsp8os.arf@gmail.com" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="#" aria-label="Smiley">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </a>
+                </div>
+                <div class="copyright">
+                    <p>Copyright © 2025 Prestige Bathing</p>
+                </div>
+                <div class="footerWebsiteBuild">
+                    <p>Website created by Adam Royal-Failes</p>
+                    <p>Hosted by <a href="https://www.netlify.com/" target="_blank">Netlify</a></p>
+                </div>
+            </div>
     <script src="script.js"></script>
 </body>
 </html>

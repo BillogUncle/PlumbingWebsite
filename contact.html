@@ -1,52 +1,184 @@
-<!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Plumbing Website Test</title>
+        <title>Prestige Bathing</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
 
 
     <!-- Sidebar Structure -->
-    <div id="sidebar" class="sidebar">
-        <button class="close-btn" onclick="closeMenu()">×</button>
-        <h2>Menu</h2>
+        <div id="sidebar" class="sidebar">
+            <button class="close-btn" onclick="closeMenu()">×</button>
 
-        <!--Change these pages to the types of services Pete does-->
-        <a href="\index.html">Service 1</a>
-        <a href="\services.html">Service 2</a>
-        <a href="\about.html">Service 3</a>
-        <a href="\contact.html">Service 4</a>
-    </div>
+            <!--Change these pages to the types of services Pete does-->
+            <ul class="sideMenu">
+                <a class="sidebarTop" href="/index.html">Home</a>
+                <a class="listParentCategory" href="/bathrooms.html">Services</a>
+                    <li>
+                        <a class="listChildCategory" href="/bathrooms.html">Bathrooms</a>
+                    </li>
+                    <li>
+                        <a class="listChildCategory" href="/bathrooms.html">Easy-Access Bathrooms</a>
+                    </li>
+                    <li>
+                        <a class="listChildCategory" href="/bathrooms.html">Wetrooms</a>
+                    </li>
+                    <li>
+                        <a class="listChildCategory" href="/bathrooms.html">Emergency Repairs</a>
+                    </li>
+            </ul>
+
+            <div id="sidebarContact" class="sidebarConatct">
+                <a href="/contact.html">Contact Us</a>
+                <a class="sidebarConatct" href="https://www.facebook.com">
+                    <img src ="">Facebook <!--Image for Facebook, link to Facebook page-->
+                </a> 
+                <a class="sidebarConatct" href="https://www.google.com">
+                    <img src="">Phone (Google atm) <!--Image for Mobile, link to Free Consultation page-->
+                </a> 
+                <a class="sidebarConatct" href="https://www.github.com">
+                    <img src="">WhatsApp (Github atm) <!--Image for WhatsApp, link to Free Consultation page-->
+                </a> 
+            </div>
+        </div>
 
 
     <!-- Main Content -->
-    <div id="main-content">
-        <header>
-            <button class="menu-btn" onclick="openMenu()">☰ Open Menu</button>
-            <h1>Company Name</h1>
-            <h4>Subtext, if applicable</h4>
-        </header>
+        <div id="main-content">
+            <header>
+                <button class="menu-btn" onclick="openMenu()">☰ Open Menu</button>
+                <h1>Contact | Company Name</h1>
+            </header>
 
-        <section id="page-name">
-            <h3>contact page (service 4)</h3>
-        </section>
-        
 
         <!-- Hero Section -->
-        <section class="hero">
-            <h2>Family Run and Reliable Plumbing Services You Can Trust</h2>
-            <p>We offer top-quality plumbing solutions for homes and businesses.</p>
+            <section class="hero">
+                <h2>Contact us</h2>
+                <p>No bathroom to big, no toilet too small</p>
+                <p>We offer free, no obligation, checks to get you the best price available for whatever your plumbing needs</p>
+            </section>
 
-            <!--Change these buttons to images which relay the types of contact Pete has
-                For example, WhatsApp, Facebook, Email etc...
-             --> 
-            <button type="button" onclick="location.href='\contact.html';">
-                Contact for a free Quote
-            </button>
-        </section>
+
+        <!-- Form Section -->
+            <section class="contactSection">
+                <p>Please fill out the form below and we’ll get back to you shortly.</p>
+
+                 <!-- Hidden banner for emergency repairs -->
+                    <div id="emergencyBanner" class="emergencyBanner" style="display: none;">
+                        ⚠️ For emergency repairs, please call: <strong>012345678901</strong>
+                    </div>
+
+                <form class="contactForm" action="https://formspree.io/f/xoveewgn" target="_blank" method="POST">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+                    <br/><br/>
+
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    <br/><br/>
+
+                    <label for="enquiry">Enquiry Type</label>
+                    <select id="enquiry" name="enquiry" required onchange="handleEnquiryChange()">
+                        <option value="">-- Please select an option --</option>
+                        <option value="Bethroom Refurbishment">Bathroom Refurbishment</option>
+                        <option value="Accessibility Installation">Accessibility Bathrooms</option>
+                        <option value="Wet-Room Enquiry">Wet-Room Installation</option>
+                        <option value="Repairs">Repairs</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <br/><br/>
+
+                   
+                    <label for="message">Please tell us what you need, include as much detail or as little detail as you want</label>
+                    <br/>
+                    <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                    <br/>
+
+                    <button type="submit">Enquire Now</button>
+                </form>
+            </section>
+
+            <section>
+                <br/>
+                <p>Prefer to call? <a href="tel:012345678901">012345678901</a></p>
+                <br/>
+                <p><strong>Business Hours:</strong> Mon–Fri, 8am–7pm</p>
+            </section>
+        </div>
+
+    <!-- Footer Section -->
+        <footer class="footerBanner">
+
+        <!-- Footer top row -->
+            <div class="footerOne">
+                <div class="footerContent">
+                    <p>Prestige Bathing LTD is an independent contractor, highly established and highly experienced plumbing business located in North-East England.</p>
+                </div>
+            </div>
+
+        <!-- Footer lower rows -->
+            <div class="footerLower">
+                <div class="footerTwo">
+                     <div class="footerContent">
+                        <p><strong>Phone</strong><br/>
+                            <a href="tel:01234567890">01234567890</a>
+                        </p>
+                        <p><strong>Email</strong><br/>
+                            <a href="mailto:adamsp8os.arf@gmail.com">adamsp8os.arf@gmail.com</a>
+                        </p>
+                        <p><strong>Address</strong><br/>
+                            <a href="https://www.google.com/maps/place/43+Pentland+Ave,+Stockton-on-Tees,+Billingham+TS23+2PN,+UK" target="_blank">
+                                41 Pentland Avenue, Billingham, TS23 2PN
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="footerThree">
+                    <div class="footerContent FooterContentList">
+                        <ul><strong>Website Directory</strong>
+                            <li><a href="/index.html">Home Page</a></li>
+                            <li><a href="/about.html">About Us</a></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li><a href="/bathrooms.html">Bathroom Types</a></li>
+                            <li><a href="/repairs.html">Repair Services</a></li>
+                            <li><a href="/services.html">All Services</a></li>       
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+            <div class="footerFooterContent">
+                <div class="footerFooterIcons">
+                    <a href="https://wa.me/441234567890" target="_blank" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="tel:01234567890" aria-label="Phone">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                    <a href="mailto:adamsp8os.arf@gmail.com" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="#" aria-label="Smiley">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </a>
+                </div>
+                <div class="copyright">
+                    <p>Copyright © 2025 Prestige Bathing</p>
+                </div>
+                <div class="footerWebsiteBuild">
+                    <p>Website created by Adam Royal-Failes</p>
+                    <p>Hosted by <a href="https://www.netlify.com/" target="_blank">Netlify</a></p>
+                </div>
+            </div>
 
     <script src="script.js"></script>
 </body>

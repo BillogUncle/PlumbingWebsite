@@ -1,3 +1,29 @@
+/*
+(no prefix) - Element
+    p {
+        This effects all elements that are p
+    }
+
+(# prefix) - id
+    #sidebar {
+        This will effect anything with the id="sidebar"
+    }
+
+
+(. prefix) - class
+    .sidebar {
+        This will effect any elemants with the class="sidebar"
+    }
+
+(* on it's own) - All
+    * {
+        This effects every HTML element on the page
+    }
+
+
+*/
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,31 +32,20 @@ body {
     overflow-x: hidden;
 }
 
-/* Sidebar Styling */
+                                /* Sidebar Styling */
 .sidebar {
     position: fixed;
     top: 0;
     left: -250px;  /* Hidden by default */
     width: 250px;
     height: 100%;
-    background-color: #0077cc;
+    background-color: #007755;
     color: white;
-    padding-top: 20px;
-    transition: 0.3s;
+    padding-top: 10px;
+    transition: 0.4s;
     z-index: 10;
 }
 
-.sidebar a {
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: white;
-    transition: 0.3s;
-}
-
-.sidebar a:hover {
-    background-color: #005a99;
-}
 
 .close-btn {
     position: absolute;
@@ -43,7 +58,69 @@ body {
     cursor: pointer;
 }
 
-/* Overlay is menu is open*/
+a.sidebarTop{
+    display: block;
+    color: #fff;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 300;
+    text-decoration: none;
+    background-color: #007;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.sidebar a:hover {
+    background-color: #005a99;
+}
+
+ul.sideMenu {
+    list-style: none;
+    display: block;
+    color: #fff;
+    padding: 15px 0px 0px 0px;
+    font-size: 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-bottom: 2px solid;
+}
+
+a.listParentCategory {
+    display: block;
+    color: #fff;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-top: 2px solid;
+    background-color: #575757;
+}
+
+a.listChildCategory {
+    display: block;
+    color: #fff;
+    background-color: hotpink;
+    font-size: 15px;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.sidebarConatct {
+
+    background-color: green;
+    text-align: center;
+}
+
+
+
+                                /* Overlay is menu is open*/
 .overlay {
     position: fixed;
     top: 0;
@@ -55,10 +132,14 @@ body {
     z-index: 9;
 }
 
-/* Main Content */
+
+                                /* Main Content */
+
 #main-content {
     transition: margin-left 0.3s;
     position: relative;
+    text-align: center;
+    background-color: #eeeeee;
 }
 
 #page-name {
@@ -71,11 +152,11 @@ body {
     text-align: center;
 }
 
-/* Menu Button */
+                                /* Menu Button */
 .menu-btn {
     font-size: 24px;
     padding: 10px 20px;
-    background-color: #ea854b;
+    background-color: #666666;
     color: white;
     border: none;
     cursor: pointer;
@@ -83,16 +164,17 @@ body {
 
 header {
     padding: 10px;
-    background-color: #ea854b;
+    background-color: #666666;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
 }
 
 .hero {
-    background-color: #e7d5b5;
-    padding: 50px;
+    background-color: #90b0b0;
+    padding: 25px;
     text-align: center;
 }
 
@@ -101,24 +183,17 @@ header {
     text-align: center;
 }
 
-/* Image Gallery */
+                                /* Image Gallery */
 .image-gallery {
-    padding: 20px;
+    padding: 2px;
     overflow: hidden;
-    background-color: #f0f0f0;
+    background-color: #666666;
 }
 
-.gallery-wrapper {
-    display: flex;
-    gap: 15px;
-    overflow-x: auto; /* Allows horizontal scrolling */
-    scroll-behavior: smooth; /* Smooth scrolling */
-    padding-bottom: 10px;
-}
 
-/* Style for Images */
+                                /* Style for Images */
 .gallery-wrapper img {
-    height: 200px;
+    height: 500px;
     border-radius: 5px;
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
@@ -143,18 +218,228 @@ header {
 .gallery-wrapper {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;     /* Firefox */
-}
-
-.gallery-wrapper {
+    scroll-snap-type: x mandatory;
+    background-color: #6e6e6e;
     display: flex;
-    gap: 15px;
+    gap: 5px;
     overflow-x: auto; 
     scroll-behavior: smooth; 
-    padding-bottom: 10px;
     cursor: grab;  /* Visual feedback for manual scrolling */
     position: relative;
 }
 
+.gallery-wrapper a {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+}
+
 .gallery-wrapper:active {
     cursor: grabbing;
+}
+
+.gallery-wrapper.dragging {
+    cursor: grabbing;
+    user-select: none;
+}
+
+
+                                /* contact.html Enquiry Form */
+
+.emergencyBanner {
+    background-color: #ff2222;
+    color: #b00000;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-left: 6px solid #ff4d4d;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+                                /* About.html */
+
+.aboutImage {
+    max-width: 100%;
+    height: 500px;
+    margin: 1rem 0;
+    border-radius: 12px;
+}
+
+
+                                /* Service.html */
+
+
+.servicesShowcase {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 5rem;
+}
+
+@media (min-width: 768px) {
+    .servicesShowcase {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.serviceCard {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.serviceImage {
+    max-width: 100%;
+    height: 500px;
+    display: block;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.serviceCard:hover .serviceImage {
+    transform: scale(1.05);
+}
+
+.serviceOverlay {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: right 0.6s ease-in-out;
+}
+
+.serviceOverlay p {
+    padding: 1px 10% 0px 10%;
+}
+
+.serviceCard:hover .serviceOverlay {
+    right: 0;
+}
+
+
+                                /* Footer */
+
+.footerBanner {
+    background-color: #444;
+    color: white;
+    padding: 1rem 1rem;
+}
+
+.footerOne {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.footerLower {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 100%;
+}
+
+.footerTwo,
+.footerThree {
+    flex: 1 1 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.footerContent {
+    max-width: 100%;
+    text-align: center;
+}
+
+.footerContent li {
+    list-style: none;
+    text-decoration: none;
+}
+
+.footerContent a {
+    color: #ffd1dc;
+    text-decoration: none;
+}
+
+.footerContent a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .footerLower {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footerTwo,
+    .footerThree {
+        justify-content: center;
+    }
+}
+
+
+
+                                /* Footers Footer */
+
+
+.footerFooterContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #222;
+    color: #ccc;
+    flex-wrap: wrap;
+}
+
+.footerFooterContent p {
+    margin: 0.2rem 0;
+}
+
+.footerWebsiteBuild {
+    text-align: right;
+}
+
+.footerWebsiteBuild a {
+    color: #ffd1dc;
+    text-decoration: none;
+}
+
+.footerWebsiteBuild a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .footerFooterContent {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footerWebsiteBuild {
+        text-align: center;
+        margin-top: 1rem;
+    }
+}
+
+.footerFooterIcons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+.footerFooterIcons i {
+    font-size: 1.5rem;
+    color: #ffd1dc;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.footerFooterIcons i:hover {
+    transform: scale(1.2);
+    color: #ffffff;
 }

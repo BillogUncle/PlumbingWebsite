@@ -1,6 +1,17 @@
 // This is a placeholder for any interactive features you want to add
 console.log("JavaScript file connected successfully!");
 
+window.addEventListener('resize', () => {
+    isMobile = window.innerWidth <= 800;
+
+    if (isMobile) {
+        clearInterval(scrollIntervalId);
+        enableMobileScroll();
+    } else {
+        galleryScroll();
+    }
+});
+
 //Function to open the side bar menu
 function openMenu() {
     document.getElementById("sidebar").style.left = "0";  // Slide the sidebar in
@@ -15,6 +26,8 @@ function closeMenu() {
     document.getElementById("overlay").style.display = "none";  // Hide overlay
 }
 
+//----------------------Rework this section (Gallery Scrolling on index.html------------------------------------------
+
 //Gallery functions
 let scrollIntervalId = null;  // Store the interval ID for easy stopping 
 let scrollingPaused = false;   // Track if scrolling is paused by interaction
@@ -25,38 +38,41 @@ let cloneCount = 0;  // Track how many times images have been cloned
 
 // Function to Clone Images for Infinite Looping
 function cloneImages() {
-    if (cloneCount >= 1) return;  // Prevent unnecessary cloning (just clone once)
-
-    originalImages.forEach(image => {
-        const clone = image.cloneNode(true);
-        gallery.appendChild(clone);
-    });
-
-    cloneCount++;
+    while (gallery.scrollWidth < window.innerWidth * 2) {
+        originalImages.forEach(image => {
+            const clone = image.cloneNode(true);
+            gallery.appendChild(clone);
+        });
+        cloneCount++;
+    }
 }
+
 
 // Initial Cloning to Prepare for Smooth Looping
 cloneImages();
 
 // Function to Auto-Scroll Gallery (Desktop only)
 function galleryScroll(step = 1) {
-    if (isMobile || scrollingPaused) return;
+    if (isMobile) return;
 
     const scrollStep = step;
-    const scrollSpeed = 50;
+    const scrollSpeed = 30;
 
-    function manualScroll() {
-        gallery.scrollLeft += scrollStep;
+    function autoScroll() {
+        if (!scrollingPaused) {
+            gallery.scrollLeft += scrollStep;
 
-        // If scrolled past the original images, smoothly reset to the start of original images
-        if (gallery.scrollLeft >= gallery.scrollWidth / 2) {
-            gallery.scrollLeft = gallery.scrollLeft - (gallery.scrollWidth / 2);
+            // Seamless reset
+            if (gallery.scrollLeft >= gallery.scrollWidth / 2) {
+                gallery.scrollLeft = gallery.scrollLeft - (gallery.scrollWidth / 2);
+            }
         }
     }
 
     if (scrollIntervalId) clearInterval(scrollIntervalId);
-    scrollIntervalId = setInterval(manualScroll, scrollSpeed);
+    scrollIntervalId = setInterval(autoScroll, scrollSpeed);
 }
+
 
 // Function to Handle Desktop Hover Events
 function stopScroll() {
@@ -99,7 +115,76 @@ function enableMobileScroll() {
     });
 }
 
-// Call the appropriate functions
+
+function enableDragToScroll() {
+    let isDown = false;
+    let startX;
+    let scrollLeftStart;
+
+    gallery.addEventListener('mousedown', (e) => {
+        if (isMobile) return;
+        isDown = true;
+        gallery.classList.add('dragging');
+        startX = e.pageX - gallery.offsetLeft;
+        scrollLeftStart = gallery.scrollLeft;
+        clearInterval(scrollIntervalId); // pause auto-scroll while dragging
+    });
+
+    gallery.addEventListener('mouseleave', () => {
+        isDown = false;
+        gallery.classList.remove('dragging');
+        if (!isMobile && !scrollingPaused) galleryScroll();
+    });
+
+    gallery.addEventListener('mouseup', () => {
+        isDown = false;
+        gallery.classList.remove('dragging');
+        if (!isMobile && !scrollingPaused) galleryScroll();
+    });
+
+    gallery.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - gallery.offsetLeft;
+        const walk = (x - startX) * 2; // sensitivity
+        gallery.scrollLeft = scrollLeftStart - walk;
+    });
+}
+
+cloneImages();
 stopScroll();
-enableMobileScroll();
 galleryScroll();
+enableMobileScroll();
+enableDragToScroll();
+
+
+
+
+//-----------------------------------------------------------------------------------
+
+// Fade in when in viewport
+const faders = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      obs.unobserve(entry.target); // only animate once
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+faders.forEach(el => observer.observe(el));
+
+function handleEnquiryChange() {
+    const enquirySelect = document.getElementById('enquiry');
+    const banner = document.getElementById('emergencyBanner');
+
+    if (enquirySelect.value === 'Repairs') {
+        banner.style.display = 'block';
+    } else {
+        banner.style.display = 'none';
+    }
+}

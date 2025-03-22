@@ -1,52 +1,143 @@
-<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Plumbing Website Test</title>
+        <title>Prestige Bathing</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
 
 
-    <!-- Sidebar Structure -->
-    <div id="sidebar" class="sidebar">
-        <button class="close-btn" onclick="closeMenu()">×</button>
-        <h2>Menu</h2>
+        <!-- Sidebar Structure -->
+        <div id="sidebar" class="sidebar">
+            <button class="close-btn" onclick="closeMenu()">×</button>
 
-        <!--Change these pages to the types of services Pete does-->
-        <a href="\index.html">Service 1</a>
-        <a href="\services.html">Service 2</a>
-        <a href="\about.html">Service 3</a>
-        <a href="\contact.html">Service 4</a>
-    </div>
+            <!--Change these pages to the types of services Pete does-->
+            <ul class="sideMenu">
+                <a class="sidebarTop" href="/index.html">Home</a>
+                <a class="listParentCategory" href="/bathrooms.html">Services</a>
+                    <li>
+                        <a class="listChildCategory" href="/bathrooms.html">Bathrooms</a>
+                    </li>
+                    <li>
+                        <a class="listChildCategory" href="/bathrooms.html">Easy-Access Bathrooms</a>
+                    </li>
+                    <li>
+                        <a class="listChildCategory" href="/bathrooms.html">Wetrooms</a>
+                    </li>
+                    <li>
+                        <a class="listChildCategory" href="/bathrooms.html">Emergency Repairs</a>
+                    </li>
+            </ul>
+
+            <div id="sidebarContact" class="sidebarConatct">
+                <a href="/contact.html">Contact Us</a>
+                <a class="sidebarConatct" href="https://www.facebook.com">
+                    <img src ="">Facebook <!--Image for Facebook, link to Facebook page-->
+                </a> 
+                <a class="sidebarConatct" href="https://www.google.com">
+                    <img src="">Phone (Google atm) <!--Image for Mobile, link to Free Consultation page-->
+                </a> 
+                <a class="sidebarConatct" href="https://www.github.com">
+                    <img src="">WhatsApp (Github atm) <!--Image for WhatsApp, link to Free Consultation page-->
+                </a> 
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div id="main-content">
+            <header>
+                <button class="menu-btn" onclick="openMenu()">☰ Open Menu</button>
+                <h1>About Us | Prestige Bathing</h1>
+            </header>
 
 
-    <!-- Main Content -->
-    <div id="main-content">
-        <header>
-            <button class="menu-btn" onclick="openMenu()">☰ Open Menu</button>
-            <h1>Company Name</h1>
-            <h4>Subtext, if applicable</h4>
-        </header>
+            <!-- Hero Section -->
+            <section class="hero">
+                <h2>About us</h2>
+                <p>After being cast out of the family business by not following the family tradition of "being an uneccessary dickbag", I took my skills (which are far superior to my dads) and decided to go it solo.</p>
+                <p>Since then, I have started my own business, gained my own clientell, and have even been the guy even my dads clients goes too when in need of plumbing.</p>
+                <p>Running an indipendant business on your own is hard. With the long hours, the job uncertainty, and the lack of social life, it can be draining. That's not to say I don't like plumbing (I love a good dirty pipe), but that's the reality of the situation.</p>
+                <p>I'm always happy to help other people whenever they need a helping hand, and I will do my best to provide the same luxury to my clients, new or old.</p>
+                <p>Also I asked some random guy who I've met once at a party back when covid was a thing (Shhh! Don't tell Boris) to build me a website. And he has, and it works. I know it's worked because you're reading this now aren't you</p>
+            </section>
+
+            <!-- Include photos of Pete working, his work, some gifs of sealant or something visually appealing to watch -->
+
+            <img src="images/plumbing5.jpg" alt="Pete on a job" class="aboutImage">
+        </div>
+
+    <!-- Footer Section -->
+        <footer class="footerBanner">
+
+        <!-- Footer top row -->
+            <div class="footerOne">
+                <div class="footerContent">
+                    <p>Prestige Bathing LTD is an independent contractor, highly established and highly experienced plumbing business located in North-East England.</p>
+                </div>
+            </div>
+
+        <!-- Footer lower rows -->
+            <div class="footerLower">
+                <div class="footerTwo">
+                     <div class="footerContent">
+                        <p><strong>Phone</strong><br/>
+                            <a href="tel:01234567890">01234567890</a>
+                        </p>
+                        <p><strong>Email</strong><br/>
+                            <a href="mailto:adamsp8os.arf@gmail.com">adamsp8os.arf@gmail.com</a>
+                        </p>
+                        <p><strong>Address</strong><br/>
+                            <a href="https://www.google.com/maps/place/43+Pentland+Ave,+Stockton-on-Tees,+Billingham+TS23+2PN,+UK" target="_blank">
+                                41 Pentland Avenue, Billingham, TS23 2PN
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="footerThree">
+                    <div class="footerContent FooterContentList">
+                        <ul><strong>Website Directory</strong>
+                            <li><a href="/index.html">Home Page</a></li>
+                            <li><a href="/about.html">About Us</a></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li><a href="/bathrooms.html">Bathroom Types</a></li>
+                            <li><a href="/repairs.html">Repair Services</a></li>
+                            <li><a href="/services.html">All Services</a></li>       
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+            <div class="footerFooterContent">
+                <div class="footerFooterIcons">
+                    <a href="https://wa.me/441234567890" target="_blank" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="tel:01234567890" aria-label="Phone">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                    <a href="mailto:adamsp8os.arf@gmail.com" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="#" aria-label="Smiley">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </a>
+                </div>
+                <div class="copyright">
+                    <p>Copyright © 2025 Prestige Bathing</p>
+                </div>
+                <div class="footerWebsiteBuild">
+                    <p>Website created by Adam Royal-Failes</p>
+                    <p>Hosted by <a href="https://www.netlify.com/" target="_blank">Netlify</a></p>
+                </div>
+            </div>
         
-        <section id="page-name">
-            <h3>about page (service 1)</h3>
-        </section>
-
-        <!-- Hero Section -->
-        <section class="hero">
-            <h2>Family Run and Reliable Plumbing Services You Can Trust</h2>
-            <p>We offer top-quality plumbing solutions for homes and businesses.</p>
-
-            <!--Change these buttons to images which relay the types of contact Pete has
-                For example, WhatsApp, Facebook, Email etc...
-             --> 
-            <button type="button" onclick="location.href='\contact.html';">
-                Contact for a free Quote
-            </button>
-        </section>
-
-    <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>
