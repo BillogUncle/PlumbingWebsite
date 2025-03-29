@@ -11,44 +11,47 @@
 
     <!-- Sidebar Structure -->
         <div id="sidebar" class="sidebar">
-            <button class="close-btn" onclick="closeMenu()">×</button>
+            <div class="sidebarInner">
+                <!-- Removed Close Button
+                <button class="close-btn" onclick="closeMenu()">×</button>
+                -->
 
-            <!--Change these pages to the types of services Pete does-->
-            <ul class="sideMenu">
-                <a class="sidebarTop" href="/index.html">Home</a>
-                <a class="listParentCategory" href="/bathrooms.html">Services</a>
-                    <li>
-                        <a class="listChildCategory" href="/bathrooms.html">Bathrooms</a>
-                    </li>
-                    <li>
-                        <a class="listChildCategory" href="/bathrooms.html">Easy-Access Bathrooms</a>
-                    </li>
-                    <li>
-                        <a class="listChildCategory" href="/bathrooms.html">Wetrooms</a>
-                    </li>
-                    <li>
-                        <a class="listChildCategory" href="/bathrooms.html">Emergency Repairs</a>
-                    </li>
-            </ul>
+                <ul class="sideMenu">
+                    <a class="sidebarTop" href="/index.html">Home</a>
+                    <a class="listParentCategory">Services</a>
+                    <li><a class="listChildCategory" href="/bathrooms.html">Bathrooms</a></li>
+                    <li><a class="listChildCategory" href="/bathrooms.html">Easy-Access Bathrooms</a></li>
+                    <li><a class="listChildCategory" href="/bathrooms.html">Wetrooms</a></li>
+                    <li><a class="listChildCategory" href="/bathrooms.html">Emergency Repairs</a></li>
+                </ul>
 
-            <div id="sidebarContact" class="sidebarConatct">
-                <a href="/contact.html">Contact Us</a>
-                <a class="sidebarConatct" href="https://www.facebook.com">
-                    <img src ="">Facebook <!--Image for Facebook, link to Facebook page-->
-                </a> 
-                <a class="sidebarConatct" href="https://www.google.com">
-                    <img src="">Phone (Google atm) <!--Image for Mobile, link to Free Consultation page-->
-                </a> 
-                <a class="sidebarConatct" href="https://www.github.com">
-                    <img src="">WhatsApp (Github atm) <!--Image for WhatsApp, link to Free Consultation page-->
-                </a> 
+                <div id="sidebarContact" class="sidebarContact">
+                    <a href="/contact.html">Contact Us</a>
+                    <div class="sidebarFooterIcons">
+                        <a href="https://wa.me/441234567890" target="_blank" aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="tel:01234567890" aria-label="Phone">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                        <a href="mailto:adamsp8os.arf@gmail.com" aria-label="Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
+    <!-- Overlay if menu is open -->
+        <div id="overlay" class="overlay" onclick="closeMenu()"></div>
+
     <!-- Main Content -->
         <div id="main-content">
-            <header>
-                <button class="menu-btn" onclick="openMenu()">☰</button>
+            <header class="topBanner">
+                <button class="menuButton" onclick="openMenu()">☰</button>
                 <h1>Repairs | Prestige Bathing</h1>
             </header>
 
@@ -89,17 +92,18 @@
     <!-- Footer Section -->
         <footer class="footerBanner">
 
-        <!-- Footer top row -->
+        <!-- Top row -->
             <div class="footerOne">
-                <div class="footerContent">
-                    <p>Prestige Bathing LTD is an independent contractor, highly established and highly experienced plumbing business located in North-East England.</p>
-                </div>
+                <p>Prestige Bathing LTD is an independent contractor, highly established and highly experienced plumbing business located in North-East England.</p>
+                <p><button class="contactButton" type="button" onclick="location.href='/contact.html';">
+                    Contact for a free Quote
+                </button></p>
             </div>
 
-        <!-- Footer lower rows -->
+        <!-- Lower stacked content -->
             <div class="footerLower">
                 <div class="footerTwo">
-                     <div class="footerContent">
+                    <div class="footerContent">
                         <p><strong>Phone</strong><br/>
                             <a href="tel:01234567890">01234567890</a>
                         </p>
@@ -115,19 +119,20 @@
                 </div>
 
                 <div class="footerThree">
-                    <div class="footerContent FooterContentList">
-                        <ul><strong>Website Directory</strong>
+                    <div class="footerContent footerContentList">
+                        <p><strong>Website Directory</strong></p>
+                        <ul>
                             <li><a href="/index.html">Home Page</a></li>
                             <li><a href="/about.html">About Us</a></li>
                             <li><a href="/contact.html">Contact Us</a></li>
                             <li><a href="/bathrooms.html">Bathroom Types</a></li>
                             <li><a href="/repairs.html">Repair Services</a></li>
-                            <li><a href="/services.html">All Services</a></li>       
                         </ul>
                     </div>
                 </div>
             </div>
         </footer>
+
 
 
             <div class="footerFooterContent">
