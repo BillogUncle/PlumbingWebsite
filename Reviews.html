@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Prestige Bathing</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
     <body>
 
@@ -47,67 +48,117 @@
 
     <!-- Overlay if menu is open -->
         <div id="overlay" class="overlay" onclick="closeMenu()"></div>
-
+        
     <!-- Main Content -->
-        <div id="main-content">
+        <div id="main-content" class="main-content">
+
+        <!-- Banner at top of page-->
             <header class="topBanner">
                 <button class="menuButton" onclick="openMenu()">☰</button>
-                <h1>Contact | Prestige Bathing</h1>
+                <h1 id="pageTitle">Reviews | Prestige Bathing</h1>
             </header>
-
-
+        
         <!-- Hero Section -->
             <section class="hero">
-                <h2>Contact us</h2>
-                <p>No bathroom to big, no toilet too small</p>
-                <p>We offer free, no obligation, checks to get you the best price available for whatever your plumbing needs</p>
+                <h2>See what our past customers and clients think</h2>
+                <p>And check out the most commonly asked questions about plumbing. Though if you're still unsure, you can always <a href="contact.html">contact us</a> for a free, no obligation, quote</p>
             </section>
 
+        <!-- Reviews Section -->
+            <section class="reviewSection">
 
-        <!-- Form Section -->
-            <section class="contactSection">
-                <p>Please fill out the form below and we’ll get back to you shortly.</p>
+            <!-- Leave a Review -->
+                <section class="leaveReview">
+                <h2>Leave a Review</h2>
 
-                 <!-- Hidden banner for emergency repairs -->
-                    <div id="emergencyBanner" class="emergencyBanner" style="display: none;">
-                        ⚠️ For emergency repairs, please call: <strong>012345678901</strong>
+                <form action="https://formspree.io/f/xoveewgn" target="_blank" method="POST">
+                    <!-- If I have Pro edition of Formspree, use this <form> element:
+
+                    <form action="https://formspree.io/f/your-form-id" method="POST" enctype="multipart/form-data">
+
+                     Until then , the images will not attach to the review -->
+
+                    <!-- Name -->
+                        <input type="text" id="reviewName" name="Name" placeholder="Your Name" required>
+                        <br/><br/>
+
+                    <!-- Type of Review -->
+                        <select id="reviewType" name="Review For" required>
+                            <option value="">-- Please select an option --</option>
+                            <option value="Bathroom Refurbishment">Bathroom Refurbishment</option>
+                            <option value="Accessibility Installation">Accessibility Bathrooms</option>
+                            <option value="Wet-Room Enquiry">Wet-Room Installation</option>
+                            <option value="Repairs">Repairs</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <br/>
+
+                    <!-- Star Rating -->
+                        <div class="starRating">
+                            <input type="radio" id="star5" name="Rating" value="5 Star" required>
+                            <label for="star5" title="5 stars">★</label>
+
+                            <input type="radio" id="star4" name="Rating" value="4 Star">
+                            <label for="star4" title="4 stars">★</label>
+
+                            <input type="radio" id="star3" name="Rating" value="3 Star">
+                            <label for="star3" title="3 stars">★</label>
+
+                            <input type="radio" id="star2" name="Rating" value="2 Star">
+                            <label for="star2" title="2 stars">★</label>
+
+                            <input type="radio" id="star1" name="Rating" value="1 Star">
+                            <label for="star1" title="1 star">★</label>
+                        </div>
+
+                    <!-- Review Text -->
+                        <textarea id="textInput" name="Message" rows="5" placeholder="Write your review here..." required></textarea>
+                        <br/><br/>
+
+
+                    <!-- Upload Image -->
+                        <label for="image"></label>
+                        <input type="file" id="image" name="Attachments" accept="image/*">
+                        <br/><br/>
+
+                    <!-- Submit Button -->
+                        <button type="submit" class="contactButton">Submit</button>
+
+                </form>
+                </section>
+
+            <h3>Check out our <a href="caseStudy">Before & After</a> gallery</h3>
+
+            <!-- Past Reviews -->
+                <section class="pastReviews">
+                    
+                    <div class="userReview">
+                        <h4>Tim McGraw <span class="reviewStars">★★★★</span></h4>
+                        <p>Got a new bathroom, excellent!</p>
+                        <img src="images/plumbing1.jpg" alt="User Review Image" class="userReviewImage">
                     </div>
 
-                <form class="contactForm" action="https://formspree.io/f/xoveewgn" target="_blank" method="POST">
-                    <input type="text" id="name" name="Name" placeholder="Your full name" required>
-                    <br/><br/>
+                    <div class="userReview">
+                        <h4>Angela Tomerick <span class="reviewStars">★★★★★</span></h4>
+                        <p>Installed some shower head for me!</p>
+                        <img src="images/plumbing1.jpg" alt="User Review Image" class="userReviewImage">
+                    </div>
 
-                    <input type="email" id="email" name="Contact" placeholder="you@example.com" required>
-                    <br/><br/>
+                    <div class="userReview">
+                        <h4>Lucie Lastname <span class="reviewStars">★★★</span></h4>
+                        <p>Emergency Repair needed, my house was flooding and I was practically showering in my living room</p>
+                        <img src="images/plumbing1.jpg" alt="User Review Image" class="userReviewImage">
+                    </div>
 
-                    <select id="enquiry" name="Enquiry" required onchange="emergencyBanner()">
-                        <option value="">-- Please select an enquiry --</option>
-                        <option value="Bethroom Refurbishment">Bathroom Refurbishment</option>
-                        <option value="Accessibility Installation">Accessibility Bathrooms</option>
-                        <option value="Wet-Room Enquiry">Wet-Room Installation</option>
-                        <option value="Repairs">Repairs</option>
-                        <option value="Other">Other</option>
-                    </select>
-                    <br/><br/>
+                    <div class="userReview">
+                        <h4>Adam <span class="reviewStars">★★★★★</span></h4>
+                        <p>Got free stuff when other customers cancel. top notch</p>
+                    </div>
 
-                   
-                    <label for="message">Please tell us what you need, include as much detail or as little detail as you want</label>
-                    <br/>
+                    
+                </section>
 
-                    <textarea id="textInput" name="Message" rows="5" placeholder="Write your message here..." required></textarea>
-                    <br/><br/>
-
-                    <button type="submit">Enquire Now</button>
-                </form>
             </section>
-
-            <section>
-                <br/>
-                <p>Prefer to call? <a href="tel:012345678901">012345678901</a></p>
-                <br/>
-                <p><strong>Business Hours:</strong> Mon–Fri, 8am–7pm</p>
-            </section>
-        </div>
 
     <!-- Footer Section -->
         <footer class="footerBanner">
@@ -181,7 +232,7 @@
                     <p>Hosted by <a href="https://www.netlify.com/" target="_blank">Netlify</a></p>
                 </div>
             </div>
-
+    
     <script src="script.js"></script>
-</body>
+    </body>
 </html>

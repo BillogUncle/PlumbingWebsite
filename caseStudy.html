@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Prestige Bathing</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
     <body>
 
@@ -47,67 +48,26 @@
 
     <!-- Overlay if menu is open -->
         <div id="overlay" class="overlay" onclick="closeMenu()"></div>
-
+        
     <!-- Main Content -->
-        <div id="main-content">
+        <div id="main-content" class="main-content">
+
+        <!-- Banner at top of page-->
             <header class="topBanner">
                 <button class="menuButton" onclick="openMenu()">☰</button>
-                <h1>Contact | Prestige Bathing</h1>
+                <h1 id="pageTitle">Reviews | Prestige Bathing</h1>
             </header>
-
-
+        
         <!-- Hero Section -->
             <section class="hero">
-                <h2>Contact us</h2>
-                <p>No bathroom to big, no toilet too small</p>
-                <p>We offer free, no obligation, checks to get you the best price available for whatever your plumbing needs</p>
+                <h2>See what our past customers and clients think</h2>
+                <p>And check out the most commonly asked questions about plumbing. Though if you're still unsure, you can always <a href="contact.html">contact us</a> for a free, no obligation, quote</p>
             </section>
 
+        <!-- Before & After Gallery -->
 
-        <!-- Form Section -->
-            <section class="contactSection">
-                <p>Please fill out the form below and we’ll get back to you shortly.</p>
+            <h1>Insert here a gallery of before and after images (Plus whatever else a case study page needs, like certifications etc...). I want the gallery to be an overlay and once hovered with the mouse (tapped on mobile) the after image overlays it [Similar to how the descriptions overlay the image on the bathrooms.html page]</h1>
 
-                 <!-- Hidden banner for emergency repairs -->
-                    <div id="emergencyBanner" class="emergencyBanner" style="display: none;">
-                        ⚠️ For emergency repairs, please call: <strong>012345678901</strong>
-                    </div>
-
-                <form class="contactForm" action="https://formspree.io/f/xoveewgn" target="_blank" method="POST">
-                    <input type="text" id="name" name="Name" placeholder="Your full name" required>
-                    <br/><br/>
-
-                    <input type="email" id="email" name="Contact" placeholder="you@example.com" required>
-                    <br/><br/>
-
-                    <select id="enquiry" name="Enquiry" required onchange="emergencyBanner()">
-                        <option value="">-- Please select an enquiry --</option>
-                        <option value="Bethroom Refurbishment">Bathroom Refurbishment</option>
-                        <option value="Accessibility Installation">Accessibility Bathrooms</option>
-                        <option value="Wet-Room Enquiry">Wet-Room Installation</option>
-                        <option value="Repairs">Repairs</option>
-                        <option value="Other">Other</option>
-                    </select>
-                    <br/><br/>
-
-                   
-                    <label for="message">Please tell us what you need, include as much detail or as little detail as you want</label>
-                    <br/>
-
-                    <textarea id="textInput" name="Message" rows="5" placeholder="Write your message here..." required></textarea>
-                    <br/><br/>
-
-                    <button type="submit">Enquire Now</button>
-                </form>
-            </section>
-
-            <section>
-                <br/>
-                <p>Prefer to call? <a href="tel:012345678901">012345678901</a></p>
-                <br/>
-                <p><strong>Business Hours:</strong> Mon–Fri, 8am–7pm</p>
-            </section>
-        </div>
 
     <!-- Footer Section -->
         <footer class="footerBanner">
@@ -181,7 +141,7 @@
                     <p>Hosted by <a href="https://www.netlify.com/" target="_blank">Netlify</a></p>
                 </div>
             </div>
-
+    
     <script src="script.js"></script>
-</body>
+    </body>
 </html>

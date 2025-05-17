@@ -184,16 +184,13 @@ body {
 
         .topBanner {
             position: fixed;
+            top: 0;
             z-index: 999;
             width: 100%;
             background-color: #666666;
             color: white;
             display: flex;
             align-items: center;
-        }
-
-        .topBanner h1 {
-            justify-content: right;
         }
 
     /* Menu Button */
@@ -211,134 +208,133 @@ body {
             background-color: #90b0b0;
             padding: 25px;
             text-align: center;
+            margin-top: 60px;
         }
 
     /* Service Showcase*/
-
-        /* Larger screen layout (>= 768px) */
         
         .servicesShowcase {
             max-width: 1800px;
             margin: 0 auto;
-            width: 97%;
+            width: 100%;
+            background: linear-gradient(to right, transparent, #b4b4b4 20%, #b4b4b4 80%, transparent);
         }
 
-            @media (min-width: 500px) {
-                .servicesShowcase {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 1rem;
-                    padding: 1rem;
-                    background-color: hotpink;
-                    justify-content: center;
-                }
-
-                .serviceCard {
-                    position: relative;
-                    overflow: hidden;
-                    width: 100%;
-                    aspect-ratio: 1 / 1; /* ensures square layout, scalable */
-                    border-radius: 5px;
-                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-                }
-
-                .serviceCard a {
-                    display: block;
-                    height: 100%;
-                    position: relative;
-                }
-
-                .serviceImage {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 12px;
-                    transition: transform 0.5s ease;
-                }
-
-                .serviceCard:hover .serviceImage {
-                    transform: scale(1.05);
-                    cursor: auto;
-                }
-
-                .serviceOverlay {
-                    position: absolute;
-                    top: 0;
-                    right: -100%;
-                    width: 100%;
-                    height: 100%;
-                    background: rgba(0, 0, 0, 0.7);
-                    color: white;
-                    padding: 0rem;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    transition: right 0.6s ease-in-out;
-                    border-radius: 12px;
-                }
-
-                .serviceOverlay:hover {
-                    cursor: auto;
-                }
-
-                .serviceCard:hover .serviceOverlay {
-                    right: 0;
-                }
-
-                .serviceOverlay p {
-                    padding: 3%;
-                    margin-top: 0.5rem;
-                }
+        @media (min-width: 500px) /* Desktop*/ {
+            .servicesShowcase {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+                padding: 1rem;
+                justify-content: center;
             }
 
-        /*Small Screen Layout <500px) */
+            .serviceCard {
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                aspect-ratio: 1 / 1; /* ensures square layout, scalable */
+                border-radius: 5px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .serviceCard a {
+                display: block;
+                height: 100%;
+                position: relative;
+            }
+
+            .serviceImage {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 12px;
+                transition: transform 0.5s ease;
+            }
+
+            .serviceCard:hover .serviceImage {
+                transform: scale(1.05);
+                cursor: auto;
+            }
+
+            .serviceOverlay {
+                position: absolute;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.7);
+                color: white;
+                padding: 0rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                transition: right 0.6s ease-in-out;
+                border-radius: 12px;
+            }
+
+            .serviceOverlay:hover {
+                cursor: auto;
+            }
+
+            .serviceCard:hover .serviceOverlay {
+                right: 0;
+            }
+
+            .serviceOverlay p {
+                padding: 3%;
+                margin-top: 0.5rem;
+            }
+        }
         
-            @media (max-width: 499px) {
+        @media (max-width: 499px) /* Mobile */ {
 
-                .serviceCard {
-                    position: relative;
-                    width: 100%;
-                    border-radius: 5px;
-                    overflow: hidden;
-                }
-
-                .serviceImage {
-                    width: 100%;
-                    height: auto;
-                    display: block;
-                    object-fit: cover;
-                }
-
-                .serviceOverlay {
-                    position: absolute;
-                    top: 0;
-                    right: -100%;
-                    width: 100%;
-                    height: 100%;
-                    background: rgba(0, 0, 0, 0.7);
-                    color: white;
-                    padding: 0rem;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    transition: right 0.6s ease-in-out;
-                }
-
-                .serviceCard.active .serviceOverlay {
-                    right: 0;
-                }
-
-                .serviceOverlay a {
-                    color: white;
-                    font-weight: bold;
-                    text-decoration: underline;
-                }
-
-                .serviceOverlay h3,
-                .serviceOverlay p {
-                    margin: 0.5rem 0;
-                }
+            .serviceCard {
+                position: relative;
+                width: 100%;
+                border-radius: 5px;
+                overflow: hidden;
             }
+
+            .serviceImage {
+                width: 100%;
+                height: auto;
+                display: block;
+                object-fit: cover;
+                margin: 5px auto;
+
+            }
+
+            .serviceOverlay {
+                position: absolute;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.7);
+                color: white;
+                padding: 0rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                transition: right 0.6s ease-in-out;
+            }
+
+            .serviceCard.active .serviceOverlay {
+                right: 0;
+            }
+
+            .serviceOverlay a {
+                color: white;
+                font-weight: bold;
+                text-decoration: underline;
+            }
+
+            .serviceOverlay h3,
+            .serviceOverlay p {
+                margin: 0.5rem 0;
+            }
+        }
 
 /* Contact Button */
 
@@ -366,7 +362,7 @@ body {
     }
 
     .galleryWrapper img {
-        max-height: 500px;
+        max-height: 20rem;
         border-radius: 5px;
         transition: transform 0.3s, box-shadow 0.3s;
         cursor: pointer;
@@ -389,7 +385,7 @@ body {
         scroll-snap-type: x mandatory;
         background-color: #333;
         display: flex;
-        gap: 6px;
+        gap: 10px;
         overflow-x: scroll; 
         scroll-behavior: smooth; 
         cursor: grab;  /* Visual feedback for manual scrolling */
@@ -569,3 +565,240 @@ body {
             transform: scale(1.2);
             color: #ffffff;
         }
+
+/* Reviews */
+
+    .reviewSection {
+        padding: 2rem;
+    }
+
+    .starRating {
+        display: flex;
+        justify-content: center;
+        flex-direction: row-reverse;
+        gap: 5px;
+    }
+
+    .starRating input[type="radio"] {
+        display: none;
+    }
+
+    .starRating label {
+        font-size: 2rem;
+        color: #ccc;
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+
+    .starRating input[type="radio"]:checked ~ label,
+    .starRating label:hover,
+    .starRating label:hover ~ label {
+        color: #ffd700;
+    }
+
+    .reviewStars {
+        color: #ffd700;
+        font-size: 1.2em;
+    }
+
+    .userReview {
+        background-color: teal;
+        border-style: solid;
+        border-color: white;
+    }
+
+    @media (max-width: 801px) /*Mobile*/ { 
+
+        #textInput {
+            width: 80%;
+        }
+
+        .pastReviews {
+            background-color: seagreen;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            padding: 1rem;
+            justify-content: center;
+        }
+
+        .userReviewImage {
+            max-height: 100px;
+        }
+
+    }
+
+    @media (min-width: 800px) /*Desktop*/ { 
+
+        #textInput {
+            width: 700px;
+        }
+
+        .pastReviews {
+            background-color: seagreen;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            padding: 0.3rem;
+            justify-content: center;
+        }
+
+        .userReviewImage {
+            max-height: 200px;
+        }
+
+    }
+
+    input[type="file"] {
+        background-color: #222;
+        color: #ffd1dc;
+        border: 1px solid #ffd1dc;
+        padding: 0.5rem;
+        border-radius: 5px;
+    }
+
+/* FAQs */
+
+    @media (max-width: 801px) /*Mobile*/ {
+        
+        #faqSearch {
+            width: 80%;
+        }
+    }
+
+    @media (min-width: 800px) /*Desktop*/ { 
+        
+        #faqSearch {
+            width: 700px;
+        }
+
+        .faqList {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .faqSection {
+        padding-top: 1rem;
+        background-color: #8888DD;
+    }
+
+    #faqSearch {
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #555;
+        border-radius: 8px;
+        background-color: fdfdfd;
+        border-bottom: 2px solid #333;
+    }
+
+    .faqList {
+        border-bottom: solid;
+    }
+
+    .faqItem h4 {
+        text-decoration: underline;
+    }
+
+    .faqItem {
+        border: 1px solid #878787;
+        margin: 0.5rem;
+        padding: 10px;
+        background-color: #fdfdfd;
+        border-radius: 5px;
+    }
+
+    .faqFooter {
+        margin: 1rem;
+        padding: 5px;
+    }
+
+    .faqFooter h3 {
+        text-decoration: underline;
+    }
+
+/* Bathroom Selection */
+
+    @media (max-width: 850px) /*Mobile*/ {
+        
+        .bathroomTypeImage {
+            max-width: 100%;
+        }
+    }
+
+    @media (min-width: 851px) /*Desktop*/ { 
+        
+        .bathroomTypeImage {
+            max-width: 400px;
+        }
+
+    }
+
+    .bathroomTypeContent {
+        background: linear-gradient(to right, transparent, #b4b4b4 20%, #b4b4b4 80%, transparent);
+        margin: 0 auto;
+        padding: 2rem;
+        max-width: 90%;
+    }
+
+    .bathroomTopSplit {
+        background-color: #EEE;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1px;
+        margin-bottom: 2rem;
+    }
+
+    .bathroomTypeImage {
+        background-color: hotpink;
+        align-content: center;
+        align-items: center;
+        flex: 1 1 300px;
+        width: 80%;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    .bathroomTopSplitTable {
+        background-color: #CCC;
+        border-radius: 10px;
+        flex: 1 1;
+        margin: 10px;
+        padding: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+    }
+
+    .bathroomTopSplitTable h4 {
+        font-style: italic;
+        text-decoration: underline;
+        padding-top: 15px;
+    }
+
+    .bathroomTopSplitTable p {
+
+    }
+
+    .prosConsTable table {
+        background-color: white`;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .tableProHeader {
+        color: green;
+    }
+
+    .tableConHeader  {
+        color: darkred;
+    }
+
+    .prosConsTable td {
+        padding: 0.5rem;
+        border: 1px solid #444;
+        text-align: center;
+    }
+

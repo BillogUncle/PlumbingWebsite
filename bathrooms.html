@@ -62,85 +62,102 @@
             <section class="hero">
                 <h2>A List of Bathroom Types</h2>
                 <p>We understand bathrooms so if you're unsure on what you want in there, feel free to <a href="/contact.html">Contact Us</a> and we will be mopre than happy to help you get the bathroom you want</p>
+
+                <label for="bathroomTypeSelect"><strong>Select a Bathroom Type:</strong></label>
+                <select id="bathroomTypeSelect">
+                    <option value="">All Bathroom Types</option>
+                    <option value="freestanding">Freestanding Bath</option>
+                    <option value="straight">Straight Bath</option>
+                    <option value="wetroom">Wet-Room Installation</option>
+                    <option value="corner">Corner Bath</option>
+                    <option value="accessible">Accessible Friendly Bathroom</option>
+                    <option value="jacuzzi">Jacuzzi / Whirlpool Bath</option>
+                </select>
+            </section>
+
+        <!-- Bathroom Selection -->
+            <section id="bathroomTypeContent" class="bathroomTypeContent" style="display: none;">
+                <div class="bathroomTopSplit">
+                    <img id="bathroomImage" src="" alt="Bathroom Image" class="bathroomTypeImage">
+                    <div class="bathroomTopSplitTable">
+                        <h2 id="bathroomTitle">Bathroom Type</h2>
+                        <div id="bathroomTable" class="prosConsTable"></div>
+                        <h4 id="bathroomBenefitTitle">.T.</h4>
+                        <p id="bathroomBenefit">.S.</p>
+                    </div>
+                </div>
+                <div class="bathroomText">
+                    <p id="bathroomIntro">...</p>
+                    <div id="bathroomDetails"></div>
+                </div>
             </section>
 
         <!-- Service Showcase-->
             <section class="servicesShowcase">
-                <a href="index.html">
-                    <div class="serviceCard">
-                        <img src="images/plumbing1.jpg" alt="Bathroom Refurbishment" class="serviceImage">
-                        <div class="serviceOverlay">
-                            <h3>Freestanding Baths</h3>
-                            <p>Wanna feel like the 1%? A Freestasnding Bath can help you to feel like luxury is a birthright, with spacious room surrounding all 4 sides we can install this anywhere.</p>
-                            <p>In the middle of your Bathroom? Sure if you wanna follow the masses like a sheep. We could put it there no problem.</p>
-                            <p>In the middle of your Living Room? Why not highten your binge-watching experience while soaking in a pool of your own filth, ey?</p>
-                            <p>In the middle of your garden? Now you're talking! If you really wanted to show off, like <b>REALLY WANTED TO</b>, who else to show off too than the neighbours. Afterall, what are they gonna do? Call the HOA? This is England for Petes sake</p>
-                        </div>
-                    </div>
-                </a>
 
-                <a href="/bathrooms.html">
-                    <div class="serviceCard">
-                        <img src="images/plumbing2.jpg" alt="Easy-Access Bathrooms" class="serviceImage">
-                        <div class="serviceOverlay">
-                            <h3>Straight Bath</h3>
-                            <p>No, this isn't some anti-LGBTQ+ propoganda. A Straight Bath is probably the most common type of bath that attaches to your wall in your bathroom on 3 of the 4 sides, creating a sort-of "alcove look"</p>
-                            <p>They are the standard in most modern Bathrooms, so if you wanna be one of the gang and a functioning member of society, or if you don't have much room to play about with in your Bathroom</p>
-                            <p>I'd recommend this one.</p>
-                        </div>
+                <div class="serviceCard" data-type="freestanding">
+                    <img src="images/plumbing1.jpg" alt="Bathroom Refurbishment" class="serviceImage">
+                    <div class="serviceOverlay">
+                        <h3>Freestanding Baths</h3>
+                        <p>Wanna feel like the 1%? A Freestasnding Bath can help you to feel like luxury is a birthright, with spacious room surrounding all 4 sides we can install this anywhere.</p>
+                        <p>In the middle of your Bathroom? Sure if you wanna follow the masses like a sheep. We could put it there no problem.</p>
+                        <p>In the middle of your Living Room? Why not highten your binge-watching experience while soaking in a pool of your own filth, ey?</p>
+                        <p>In the middle of your garden? Now you're talking! If you really wanted to show off, like <b>REALLY WANTED TO</b>, who else to show off too than the neighbours. Afterall, what are they gonna do? Call the HOA? This is England for Petes sake</p>
                     </div>
-                </a>
+                </div>
 
-                <a href="/about.html">
-                    <div class="serviceCard">
-                        <img src="images/plumbing3.jpg" alt="Wetroom Installation" class="serviceImage">
-                        <div class="serviceOverlay">
-                            <h3>Wet-Room Installation</h3>
-                            <p>Carpeted Bathrooms? <b>EW!</b></p>
-                            <p>Yeah that trend died long ago along with the boomers who suggested the rot-harvesting, mould-gathering, moist-toe-tickler type of design</p>
-                            <p>So a lot of people these days opt for Wet-Rooms. One smooth floor running across the whole room, it doesn't matter if it gets wet because it all leads to the same drain.</p> 
-                            <p>You can think about like one of those shared changing rooms in the local swimming baths they took you in in primary school. If little Timmy<sup><sub>TM</sub></sup> has an accident while getting changed, well it'll just run off into the center of the room</p>
-                            <p>Alternatively, think of it as One-Big-Shower. Scrub your natters over by the sink for all we care. It all flows towards the drain.</p>
-                        </div>
+                <div class="serviceCard" data-type="straight">
+                    <img src="images/plumbing2.jpg" alt="Easy-Access Bathrooms" class="serviceImage">
+                    <div class="serviceOverlay">
+                        <h3>Straight Bath</h3>
+                        <p>No, this isn't some anti-LGBTQ+ propoganda. A Straight Bath is probably the most common type of bath that attaches to your wall in your bathroom on 3 of the 4 sides, creating a sort-of "alcove look"</p>
+                        <p>They are the standard in most modern Bathrooms, so if you wanna be one of the gang and a functioning member of society, or if you don't have much room to play about with in your Bathroom</p>
+                        <p>I'd recommend this one.</p>
                     </div>
-                </a>
+                </div>
 
-                <a href="/contact.html">
-                    <div class="serviceCard">
-                        <img src="images/plumbing4.jpg" alt="Emergency Repairs" class="serviceImage">
-                        <div class="serviceOverlay">
-                            <h3>Corner Baths</h3>
-                            <p>You guessed it, these fit in the corner of the room.</p>
-                            <p>Two sides stick to the walls of the bathroom leaving the other two free. These, like the bodies that will use them, can come in many shapes. Curved, Geometric, Box-like, some can even have the end of it come away forming a little "L-Shape".</p>
-                            <p>A popular design for those who cherish their bathroom space.</p>
-                        </div>
+                <div class="serviceCard" data-type="wetroom">
+                    <img src="images/plumbing3.jpg" alt="Wetroom Installation" class="serviceImage">
+                    <div class="serviceOverlay">
+                        <h3>Wet-Room Installation</h3>
+                        <p>Carpeted Bathrooms? <b>EW!</b></p>
+                        <p>Yeah that trend died long ago along with the boomers who suggested the rot-harvesting, mould-gathering, moist-toe-tickler type of design</p>
+                        <p>So a lot of people these days opt for Wet-Rooms. One smooth floor running across the whole room, it doesn't matter if it gets wet because it all leads to the same drain.</p> 
+                        <p>You can think about like one of those shared changing rooms in the local swimming baths they took you in in primary school. If little Timmy<sup><sub>TM</sub></sup> has an accident while getting changed, well it'll just run off into the center of the room</p>
+                        <p>Alternatively, think of it as One-Big-Shower. Scrub your natters over by the sink for all we care. It all flows towards the drain.</p>
                     </div>
-                </a>
+                </div>
 
-                <a href="/contact.html">
-                    <div class="serviceCard">
-                        <img src="images/plumbing4.jpg" alt="Emergency Repairs" class="serviceImage">
-                        <div class="serviceOverlay">
-                            <h3>Accessible Friendly Bathrooms</h3>
-                            <p>Not everyone has the mobility to use a shower, and some even struggle with the frame of a bath.</p>
-                            <p><b>BUT</b>... this if the modern day, where hygiene is prevelant and neccessary if you share an office with other people, lest you get repromanded from your boss and handed several warnings via email over the course of several months because Jared in Accounting doesn't know how to use a can of Febreeze in the... Ahem* sorry...</p>
-                            <p>We can make sure that anyone can use your bathroom, regardless of you capabilities or your age.</p>
-                            <p><sub>We can also install little stairs so your dog or cat can join you</sub></p>
-                        </div>
+                <div class="serviceCard" data-type="corner">
+                    <img src="images/plumbing4.jpg" alt="Emergency Repairs" class="serviceImage">
+                    <div class="serviceOverlay">
+                        <h3>Corner Baths</h3>
+                        <p>You guessed it, these fit in the corner of the room.</p>
+                        <p>Two sides stick to the walls of the bathroom leaving the other two free. These, like the bodies that will use them, can come in many shapes. Curved, Geometric, Box-like, some can even have the end of it come away forming a little "L-Shape".</p>
+                        <p>A popular design for those who cherish their bathroom space.</p>
                     </div>
-                </a>
+                </div>
 
-                <a href="/contact.html">
-                    <div class="serviceCard">
-                        <img src="images/plumbing4.jpg" alt="Emergency Repairs" class="serviceImage">
-                        <div class="serviceOverlay">
-                            <h3>Jacuzzi/ Whirlpool Baths</h3>
-                            <p>A Jacuzzi, outside!? What are you mad, have you seen the British weather? There is no chance you'd ever get to use it.</p>
-                            <p>But a Jacuzzi indoors? Now you're talking! For the low low price of your monthly electric bill every 10 minutes, we can install for you a Jacuzzi bath, with bubbles <u>not</u> made from natural sources</p>
-                            <p>These can be freestanding or attached to the wall, whatever you prefer. They have bubble-making magic inside that churns the human-stew while it <s>cooks</s> cleans and relaxes the body. So be careful if you fall asleep when getting massaged, this could probably kill you, what with sleeping underwater and drowning and everything.</p>
-                        </div>
+                <div class="serviceCard" data-type="accessible">
+                    <img src="images/plumbing4.jpg" alt="Emergency Repairs" class="serviceImage">
+                    <div class="serviceOverlay">
+                        <h3>Accessible Friendly Bathrooms</h3>
+                        <p>Not everyone has the mobility to use a shower, and some even struggle with the frame of a bath.</p>
+                        <p><b>BUT</b>... this if the modern day, where hygiene is prevelant and neccessary if you share an office with other people, lest you get repromanded from your boss and handed several warnings via email over the course of several months because Jared in Accounting doesn't know how to use a can of Febreeze in the... Ahem* sorry...</p>
+                        <p>We can make sure that anyone can use your bathroom, regardless of you capabilities or your age.</p>
+                        <p><sub>We can also install little stairs so your dog or cat can join you</sub></p>
                     </div>
-                </a>
+                </div>
+
+                <div class="serviceCard" data-type="jacuzzi">
+                    <img src="images/plumbing4.jpg" alt="Emergency Repairs" class="serviceImage">
+                    <div class="serviceOverlay">
+                        <h3>Jacuzzi/ Whirlpool Baths</h3>
+                        <p>A Jacuzzi, outside!? What are you mad, have you seen the British weather? There is no chance you'd ever get to use it.</p>
+                        <p>But a Jacuzzi indoors? Now you're talking! For the low low price of your monthly electric bill every 10 minutes, we can install for you a Jacuzzi bath, with bubbles <u>not</u> made from natural sources</p>
+                        <p>These can be freestanding or attached to the wall, whatever you prefer. They have bubble-making magic inside that churns the human-stew while it <s>cooks</s> cleans and relaxes the body. So be careful if you fall asleep when getting massaged, this could probably kill you, what with sleeping underwater and drowning and everything.</p>
+                    </div>
+                </div>
             </section>
         </div>
 
